@@ -23,28 +23,34 @@ class GFG
 // } Driver Code Ends
 
 
+
+
 //User function Template for Java
 
 class Solution
-{
-    public int is_bleak(int n)
-    {
-        for(int i=n-ciel(n);i<n;i++){
-            if(i+cntsb(i)==n){
-                return 0;
-            }
-        }
-        return 1;
-    }
-    int cntsb(int n){
-        int cnt=0;
+{   static int count(int n){
+    int ct=0;
+    
         while(n>0){
             if(n%2==1){
-                cnt++;
+                ct++;
             }
             n/=2;
         }
-        return cnt;
+    return ct;
+}
+    public int is_bleak(int n)
+    {   
+        // if(n==1){
+        //     return 1;
+        // }
+        int m=n; 
+       while(n-->=m-ciel(m)){
+           if(m==n+count(n)){
+               return 0;
+           }
+       }
+       return 1;
     }
     int ciel(int n){
         n--;
@@ -54,5 +60,5 @@ class Solution
             cnt++;
         }
         return cnt;
-    }
+}
 }
