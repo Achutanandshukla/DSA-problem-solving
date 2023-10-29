@@ -17,7 +17,7 @@ class CheckBit
         for(int i=0;i<k;i++){
             n/=2;
         }
-        return n%2==1 ? true : false ;
+        return n%2==1 ;
     }
     
 }
